@@ -22,7 +22,7 @@ class App < Sinatra::Base
 
 
   get '/' do
-    # File.read('index.html')
+    File.read('index.html')
     render(:erb, :index)
   end
 
@@ -40,10 +40,12 @@ class App < Sinatra::Base
     file = JSON.parse(File.read('data.json'))
     unless params[:name] && params[:oid]
       return 'Invalid Request'
+    end
     movie = { name: params[:name], oid: params[:oid] }
     file << movie
     File.write('data.json',JSON.pretty_generate(file))
     movie.to_json
+
   end
 
-end #app end
+end
