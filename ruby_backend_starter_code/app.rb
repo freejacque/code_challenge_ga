@@ -1,7 +1,9 @@
 require 'sinatra'
 
-get '/'
-  File.read('index.html')
+get '/' do
+  "hello world"
+  File.read('public/index.html')
+  # erb :index
 end
 
 get 'favorites' do
@@ -9,7 +11,7 @@ get 'favorites' do
   File.read('data.json')
 end
 
-get '/favorites' do
+post '/favorites' do
   file = JSON.parse(File.read('data.json'))
   unless params[:name] && params[:oid]
     return 'Invalid Request'
