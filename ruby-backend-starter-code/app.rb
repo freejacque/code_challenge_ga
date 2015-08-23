@@ -27,6 +27,10 @@ class App < Sinatra::Base
     render(:erb, :index)
   end
 
+  get '/search' do
+    render(:erb, :search_form)
+  end
+
   get '/favorites' do
     response.header['Content-Type'] = 'application/json'
     File.read('data.json')
