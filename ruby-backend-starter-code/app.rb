@@ -9,7 +9,6 @@ require 'uri'
 
 class App < Sinatra::Base
 
-
   ######################
   # Configuration
   ######################
@@ -47,4 +46,4 @@ class App < Sinatra::Base
     movie.to_json
   end
 
-end
+end #app end
