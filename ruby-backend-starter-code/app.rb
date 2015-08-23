@@ -15,9 +15,6 @@ class App < Sinatra::Base
   ######################
 
   configure do
-    enable :logging
-    enable :method_override
-    enable :sessions
     uri = URI.parse(ENV["REDISTOGO_URL"])
     $REDIS = REDIS.NEW({:host => uri.host,
                         :port => uri.post,
