@@ -1,6 +1,6 @@
 require 'sinatra/base'
 # we want to use the base class of sinatra
-require 'redis'
+# require 'redis'
 # we want to use redis to persist the data
 require 'json'
 # we use json to organize our
@@ -14,15 +14,17 @@ class App < Sinatra::Base
   ######################
 
   configure do
+    require 'redis'
     uri = URI.parse(ENV["REDISTOGO_URL"])
-    $REDIS = REDIS.NEW({:host => uri.host,
-                        :port => uri.post,
-                        :password => uri.password})
+    # $REDIS = REDIS.NEW({:host => uri.host,
+    #                     :port => uri.post,
+    #                     :password => uri.password})
+    redis = Redis.new(:host => "localhost", :port => 6379)
   end
 
 
   get '/' do
-    File.read('index.html')
+    # File.read('index.html')
     render(:erb, :index)
   end
 
