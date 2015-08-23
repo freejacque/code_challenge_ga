@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', '~> 1.4.5'
-gem 'redis'
-gem 'httparty'
+ruby "2.1.2"
 
-# only used locally in development
+gem 'sinatra', '~> 1.4.5'
+gem 'redis', '~> 3.1.0'
+
 group :development do
   gem 'pry'
   gem 'shotgun'
@@ -13,3 +13,4 @@ end
 group :production do
 
 end
+
