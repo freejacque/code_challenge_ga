@@ -2,7 +2,7 @@ require 'sinatra'
 
 get '/' do
   "hello world"
-  File.read('public/index.html')
+  File.read('views/index.html')
   # erb :index
 end
 
