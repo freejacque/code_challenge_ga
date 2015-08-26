@@ -16,14 +16,14 @@ domReady(function(){
     var searchValue = titleSearchField.value;
     var searchValueID = imdbSearchField.value;
     if (searchValue != ""){
-      r.open("GET", "http://www.omdbapi.com/?s=" + searchValue, true);
+      r.open("POST", "http://www.omdbapi.com/?s=" + searchValue, true);
       alert(searchValue);
     } else if (searchValueID != "") {
-      r.open("GET", "http://www.omdbapi.com/?i" + searchValueID, true);
+      r.open("POST", "http://www.omdbapi.com/?i" + searchValueID, true);
       alert(searchValueID + " imdb");
     }
     // var data = JSON.parse(r.responseText);
-    submitButton.addEventListener('click', 'load', true) = function() {
+    submitButton.addEventListener('click', 'load', false) = function() {
       if (r.status >= 200 && r.status < 400) {
         var data = JSON.parse(r.responseText);
         alert(data);
