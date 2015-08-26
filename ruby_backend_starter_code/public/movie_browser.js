@@ -16,10 +16,10 @@ domReady(function(){
     var searchValue = titleSearchField.value;
     var searchValueID = imdbSearchField.value;
     if (searchValue != ""){
-      r.open("POST", "http://www.omdbapi.com/?s=" + searchValue, true);
+      r.open("GET", "http://www.omdbapi.com/?s=" + searchValue, true);
       alert(searchValue);
     } else if (searchValueID != "") {
-      r.open("POST", "http://www.omdbapi.com/?i" + searchValueID, true);
+      r.open("GET", "http://www.omdbapi.com/?i" + searchValueID, true);
       alert(searchValueID + " imdb");
     }
     var data = JSON.parse(r.responseText);
