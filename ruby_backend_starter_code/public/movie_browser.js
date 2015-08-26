@@ -23,7 +23,7 @@ domReady(function(){
       alert(searchValueID + " imdb");
     }
     // var data = JSON.parse(r.responseText);
-    r.onload = function() {
+    submitButton.addEventListener('click', 'load', true) = function() {
       if (r.status >= 200 && r.status < 400) {
         var data = JSON.parse(r.responseText);
         alert(data);
