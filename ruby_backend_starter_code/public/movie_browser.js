@@ -22,8 +22,8 @@ domReady(function(){
       r.open("POST", "http://www.omdbapi.com/?i" + searchValueID, true);
       alert(searchValueID + " imdb");
     }
-    // var data = JSON.parse(r.responseText);
-    submitButton.addEventListener('click', 'load', false) = function() {
+    var data = JSON.parse(r.responseText);
+    submitButton.addEventListener('click', 'load', true) = function() {
       if (r.status >= 200 && r.status < 400) {
         var data = JSON.parse(r.responseText);
         alert(data);
